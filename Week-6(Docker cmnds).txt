@@ -1,0 +1,32 @@
+sudo apt-get update
+sudo apt-get install -y ca-certificates curl gnupg lsb-release
+
+> sudo mkdir -p /etc/apt/keyrings
+> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+> echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] \
+https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+> sudo apt update -y
+> sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+> docker --version
+
+-- view imgs and pull a docker img --
+> mkdir dp
+> cd dp
+> docker images
+> docker pull ubuntu:20.04
+
+-- create run cont --
+> docker run -d --name cont ubuntu:20.04 sleep 600
+
+> docker ps -a
+
+-- cont lifecycle --
+> docker stop cont
+> docker start cont
+> docker pause cont
+> docker unpause cont
+
+-- del cont imgs --
+> docker stop cont
+> docker rm cont
+> docker rmi cont
