@@ -34,12 +34,14 @@ end
 
 
 Step 5: Create the Site Manifest
+IN HOME(go back to home)
 
 # File: site.pp
 include webserver                 # Include the webserver class to apply
 
 
 Step 6: Apply the Manifest
+RUN IN HOME
 
 puppet apply site.pp --modulepath=./modules   # Apply the Puppet manifest to configure the system
 
@@ -47,4 +49,5 @@ puppet apply site.pp --modulepath=./modules   # Apply the Puppet manifest to con
 Step 7: Verify Configuration
 
 systemctl status apache2            # Check Apache service status
+
 # Open browser at http://localhost to see "Puppet Webserver Working!"
