@@ -1,6 +1,7 @@
 -- Verify Docker Installation --
-
-docker run hello-world          # Test Docker installation by running the hello-world image
+docker --version
+docker run hello-world
+# Test Docker installation by running the hello-world image
 
 
 -- Install Minikube --
@@ -73,3 +74,4 @@ kubectl get svc                        # List services
 
 minikube service html-page             # Open the service in browser via NodePort
 open localhost                         # (Optional) open localhost if NodePort mapped
+
